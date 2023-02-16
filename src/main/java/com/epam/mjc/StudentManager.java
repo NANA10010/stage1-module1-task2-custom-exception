@@ -8,6 +8,17 @@ public class StudentManager {
   public Student find(long studentID) {
     return Student.getValueOf(studentID);
   }
+  
+      public static class StudentManager {
+        public StudentManager(){
+        }
+        public Student find(long studentID) throws IllegalArgumentException{
+            if(Student.getValueOf(studentID)==null){
+                throw new IllegalArgumentException("Could not find student with ID", studentID);
+            }
+            return Student.getValueOf(studentID);
+        }
+    }
 
   public static void main(String[] args) {
     StudentManager manager = new StudentManager();
@@ -18,4 +29,9 @@ public class StudentManager {
     }
 
   }
+     public static class IllegalArgumentException extends Exception{
+        public IllegalArgumentException(String message,long ID){
+            super(message +" "+ ID);
+        }
+    }
 }
