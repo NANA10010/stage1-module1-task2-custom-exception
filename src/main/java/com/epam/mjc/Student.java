@@ -44,7 +44,7 @@ public enum Student {
     public String getName()  throws IllegalArgumentException{
         return name;
     }
-    public int getAge() {
+    public int getAge() throws IllegalArgumentException {
         return age;
     }
 }
