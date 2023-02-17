@@ -16,12 +16,17 @@ public class StudentManager {
         }
 
 
-        public  static void main(String[] args) throws IllegalArgumentException {
+        public  static void main(String[] args)  {
             StudentManager manager = new StudentManager();
 
             for (int i = 0; i < IDs.length; i++) {
+                try{
                 Student student = manager.find(IDs[i]);
-                System.out.println("Student name " + student.getName());
+                    System.out.println("Student name " + student.getName());}
+
+                 catch (IllegalArgumentException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
         }
