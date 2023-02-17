@@ -26,7 +26,7 @@ public class StudentManager {
 
         }
 
-        public static class IllegalArgumentException extends Exception{
+        public  class IllegalArgumentException extends Exception{
             public IllegalArgumentException(String message,long ID){
                 super(message +" "+ ID);
             }
