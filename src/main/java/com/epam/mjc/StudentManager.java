@@ -12,12 +12,17 @@ public class StudentManager {
         }
 
 
-        public StudentManager(){
+        public StudentManager() throws IllegalArgumentException{
         }
 
 
         public  static void main(String[] args)  {
-            StudentManager manager = new StudentManager();
+            StudentManager manager = null;
+            try {
+                manager = new StudentManager();
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException(e);
+            }
 
             for (int i = 0; i < IDs.length; i++) {
                 try{
@@ -31,9 +36,9 @@ public class StudentManager {
 
         }
 
-        public  class IllegalArgumentException extends Exception{
+    }
+          class IllegalArgumentException extends Exception{
             public IllegalArgumentException(String message,long ID){
                 super(message +" "+ ID);
             }
         }
-    }
